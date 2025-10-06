@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyDesktop</title>
+    <!--https://criticalmediartstudio.com/witnessing/index.html-->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/folder.png">
+</head>
+
+<header>
+  <marquee class="status-marquee" behavior="scroll" direction="left" scrollamount="10">
+    ✦✧✦ Miffy's ✦ Great ✦ Vast ✦ Fun ✦ Desktop World ✧✦✧
+  </marquee>
+</header>
+
+<nav>
+    <a class="folder" href="me.html">
+        <img src="assets/folder.png" alt="Guestbook">
+        <p>꒰˶• ༝ •˶꒱</p>
+    </a>
+    <a class="folder" href="photography.html">
+        <img src="assets/folder.png" alt="photography">
+        <p>Photo</p>
+    </a>
+    <a class="folder" href="design.html">
+        <img src="assets/folder.png" alt="design">
+        <p>Design</p>
+    </a>
+    <a class="folder" href="guestbook.html">
+        <img src="assets/photobooth.png" alt="Guestbook">
+        <p>Guestbook</p>
+    </a>
+</nav>
+
+<div class="desktop-only-overlay">
+  <p class="animated-text">can only view in full-desktop</p>
+</div>
+
+<!-- Finder Popup -->
+<div class="finder">
+    <div class="titlebar">
+        <div class="traffic">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+        </div>
+    <div class="title">Finder — Design</div>
+        <a class="finder-close" href="design.html">×</a>
+    </div>
+
+    <div class="finder-content">
+      <a class="photo" href="files/design/DFA Recruitment.png">
+        <img src="files/design/DFA Recruitment.png" alt="">
+        <span>DFA Poster</span>
+      </a>
+       <a class="photo" href="files/design/TEDxGovs.pdf">
+        <img src="files/design/TEDxGovs.png" alt="">
+        <span>TedX</span>
+      </a>
+      <a class="photo" href="files/design/PIPPIN.png">
+        <img src="files/design/PIPPIN.png" alt="">
+        <span>PIPPIN</span>
+      </a>
+      <a class="photo" href="files/design/Govs.png">
+        <img src="files/design/Govs.png" alt="">
+        <span>Govs</span>
+      </a>
+      <a class="photo" href="files/design/Pink in the Rink.png">
+        <img src="files/design/Pink in the Rink.png" alt="">
+        <span>Pink Rink</span>
+      </a>
+      <a class="photo" href="files/design/BBcard.png">
+        <img src="files/design/BBcard.png" alt="">
+        <span>Christmas Card</span>
+      </a>
+    </div>
+</div>
+
+<body>
+  <!--othet popup-->
+  <div id="confetti-overlay">
+        <canvas id="confetti-canvas"></canvas>
+  </div>
+  <audio id="bg-music" src="assets/speeddemon.mp3"></audio>
+  <!-- Instruction popup-->
+    <div class="popup" id="instruction-popup" style="display:none;">
+    <button class="close-btn">×</button>
+    <p>
+        You’ve stumbled upon <b>Miffy’s Desktop</b>: <br>
+        aka a peek into her life. <br><br>
+        Wander through random folders, open curious files,
+        and don’t forget to leave your footprint in the ✿ digital guestbook ✿!
+    </p>
+    </div>
+  <!-- Dashboard popup-->
+  <div class="dash-popup" id="dash-popup" style="display:none;">
+    <div class="dash-titlebar">
+      <div class="dash-title">System Dashboard</div>
+      <button id="dash-close" class="close-btn" aria-label="Close">×</button>
+    </div>
+    <pre class="dash-content" id="dash-content">Initializing…</pre>
+    <div class="dash-actions">
+      <button id="dash-refresh">Refresh</button>
+    </div>
+  </div>
+  <!-- Goodnotes popup -->
+  <div class="popup notes" id="notes-popup" style="display:none;">
+    <div class="notes-titlebar">
+      <span>Notes</span>
+      <button class="close-btn" aria-label="Close">×</button>
+    </div>
+
+    <div class="notes-body">
+      <input id="notes-title" class="notes-input" type="text" placeholder="Your name (or anonymous)">
+      <textarea id="notes-text" class="notes-textarea" placeholder="Write your note to Miffy..."></textarea>
+    </div>
+
+    <div class="notes-actions">
+      <button id="notes-email">Send</button>
+    </div>
+  </div>
+  <!-- iCal Countdown Popup -->
+  <div class="popup" id="ical-popup" style="display:none;">
+    <div class="ical-titlebar">
+      <span>iCal — Countdown</span>
+      <button id="ical-close" class="close-btn" aria-label="Close">×</button>
+    </div>
+
+    <div id="ical-list" class="ical-list">
+      <!-- countdown rows will be injected here -->
+    </div>
+  </div>
+</body>
+
+<footer>
+    <a class="app finder-toggle" href="#">
+  <img src="assets/finder.png" alt="Finder">
+</a>
+    <a class="app dash-toggle" href="#">
+        <img src="assets/dash.png" alt="Dashboard"></a>
+    </a>
+    <a class="app settings-toggle" href="#">
+      <img src="assets/setting.png" alt="Settings">
+    </a>
+    <a class="app ical-toggle" href="#">
+      <img src="assets/ical.png" alt="iCal">
+    </a>
+    <a class="app" href="sms:+16178385969?body=Hey%20Miffy!%20Let's%20chat!">
+        <img src="assets/wechat.png">
+    </a>
+    <a class="app" href="https://www.yiqiaomiffywang.com">
+        <img src="assets/chrome.png">
+    </a>
+    <a class="app goodnotes-toggle" href="#">
+      <img src="assets/goodnote.png" alt="GoodNotes">
+    </a>
+    <a class="app" href="design.html">
+        <img src="assets/figma.png">
+    </a>
+    <a class="app" href="design.html">
+        <img src="assets/illustrator.png">
+    </a>
+    <a class="app" href="photography.html">
+        <img src="assets/photoshop.png">
+    </a>
+    <a class="app" href="https://www.linkedin.com/in/yiqiao-miffy-wang/">
+        <img src="assets/slack.png">
+    </a>
+    <a class="app notion-toggle" href="#">
+        <img src="assets/notion.png">
+    </a>
+    <a class="app" href="https://github.com/miffy-wang">
+        <img src="assets/r.png">
+    </a>
+    <a class="app" href="https://github.com/miffy-wang">
+        <img src="assets/vscode.png">
+    </a>
+    <a class="app music-toggle" href="#">
+        <img src="assets/music.png" alt="Music">
+    </a>
+
+<script src="index.js"></script>
+</footer>

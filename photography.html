@@ -8,7 +8,9 @@
 </head>
 
 <header>
-    <marquee behavior="scroll" direction="left" scrollamount="10">✦✧✦ Miffy's ✦ Great ✦ Vast ✦ Fun ✦ Desktop World ✧✦✧</marquee>
+  <marquee class="status-marquee" behavior="scroll" direction="left" scrollamount="10">
+    ✦✧✦ Miffy's ✦ Great ✦ Vast ✦ Fun ✦ Desktop World ✧✦✧
+  </marquee>
 </header>
 
 <nav>
@@ -30,6 +32,10 @@
     </a>
 </nav>
 
+<div class="desktop-only-overlay">
+  <p class="animated-text">can only view in full-desktop</p>
+</div>
+
 <!-- Finder Popup -->
 <div class="finder">
     <div class="titlebar">
@@ -38,80 +44,133 @@
             <span class="dot yellow"></span>
             <span class="dot green"></span>
         </div>
-    <div class="title">Finder — Miffy</div>
+    <div class="title">Finder — photography</div>
         <a class="finder-close" href="index.html">×</a>
     </div>
 
     <div class="finder-content">
-      <a class="file" href="files/me/README.txt">
-        <img src="assets/txt.png" alt="">
-        <span>README.txt</span>
+      <a class="file" href="https://www.instagram.com/p/C02L1zxJXjS/">
+        <img src="files/photo/bta video.png" alt="">
+        <span>My Story</span>
       </a>
-       <a class="file" href="files/me/IMG_4061.PNG">
-        <img src="files/me/moi.png" alt="">
-        <span>moi</span>
-      </a>
-      <a class="file" href="fam.html">
+      <a class="file" href="ART1380.html">
         <img src="assets/folder.png" alt="">
-        <span>fam</span>
+        <span>ART1380</span>
       </a>
-      <a class="file" href="life.html">
+      <a class="file" href="AP Portfolio.html">
         <img src="assets/folder.png" alt="">
-        <span> ❤︎₊ ⊹ </span>
+        <span>AP Portfolio</span>
       </a>
-      </a>
-      <a class="file" href="mailto:miffy.yq.wang@yale.edu">
-        <img src="assets/txt.png" alt="">
-        <span>contact.txt</span>
+      <a class="file" href="Govs.html">
+        <img src="assets/folder.png" alt="">
+        <span>Govs</span>
       </a>
     </div>
 </div>
 
 
+<body>
+  <!--other popup-->
+  <div id="confetti-overlay">
+        <canvas id="confetti-canvas"></canvas>
+  </div>
+  <audio id="bg-music" src="assets/speeddemon.mp3"></audio>
+  <!-- Instruction popup-->
+    <div class="popup" id="instruction-popup" style="display:none;">
+    <button class="close-btn">×</button>
+    <p>
+        You’ve stumbled upon <b>Miffy’s Desktop</b>: <br>
+        aka a peek into her life. <br><br>
+        Wander through random folders, open curious files,
+        and don’t forget to leave your footprint in the ✿ digital guestbook ✿!
+    </p>
+    </div>
+  <!-- Dashboard popup-->
+  <div class="dash-popup" id="dash-popup" style="display:none;">
+    <div class="dash-titlebar">
+      <div class="dash-title">System Dashboard</div>
+      <button id="dash-close" class="close-btn" aria-label="Close">×</button>
+    </div>
+    <pre class="dash-content" id="dash-content">Initializing…</pre>
+    <div class="dash-actions">
+      <button id="dash-refresh">Refresh</button>
+    </div>
+  </div>
+  <!-- Goodnotes popup -->
+  <div class="popup notes" id="notes-popup" style="display:none;">
+    <div class="notes-titlebar">
+      <span>Notes</span>
+      <button class="close-btn" aria-label="Close">×</button>
+    </div>
+
+    <div class="notes-body">
+      <input id="notes-title" class="notes-input" type="text" placeholder="Your name (or anonymous)">
+      <textarea id="notes-text" class="notes-textarea" placeholder="Write your note to Miffy..."></textarea>
+    </div>
+
+    <div class="notes-actions">
+      <button id="notes-email">Send</button>
+    </div>
+  </div>
+  <!-- iCal Countdown Popup -->
+  <div class="popup" id="ical-popup" style="display:none;">
+    <div class="ical-titlebar">
+      <span>iCal — Countdown</span>
+      <button id="ical-close" class="close-btn" aria-label="Close">×</button>
+    </div>
+
+    <div id="ical-list" class="ical-list">
+      <!-- countdown rows will be injected here -->
+    </div>
+  </div>
+</body>
+
 <footer>
-    <a class="app" href="finder.html">
-        <img src="assets/finder.png">
+    <a class="app finder-toggle" href="#">
+  <img src="assets/finder.png" alt="Finder">
+</a>
+    <a class="app dash-toggle" href="#">
+        <img src="assets/dash.png" alt="Dashboard"></a>
     </a>
-    <a class="app" href="dashboard.html">
-        <img src="assets/dash.png">
+    <a class="app settings-toggle" href="#">
+      <img src="assets/setting.png" alt="Settings">
     </a>
-    <a class="app" href="setting.html">
-        <img src="assets/setting.png">
+    <a class="app ical-toggle" href="#">
+      <img src="assets/ical.png" alt="iCal">
     </a>
-    <a class="app" href="ical.html">
-        <img src="assets/ical.png">
-    </a>
-    <a class="app" href="wechat.html">
+    <a class="app" href="sms:+16178385969?body=Hey%20Miffy!%20Let's%20chat!">
         <img src="assets/wechat.png">
     </a>
-    <a class="app" href="chrome.html">
+    <a class="app" href="https://www.yiqiaomiffywang.com">
         <img src="assets/chrome.png">
     </a>
-    <a class="app" href="goodnote.html">
-        <img src="assets/goodnote.png">
+    <a class="app goodnotes-toggle" href="#">
+      <img src="assets/goodnote.png" alt="GoodNotes">
     </a>
-    <a class="app" href="figma.html">
+    <a class="app" href="design.html">
         <img src="assets/figma.png">
     </a>
-    <a class="app" href="adobeillustrator.html">
+    <a class="app" href="design.html">
         <img src="assets/illustrator.png">
     </a>
-    <a class="app" href="adobephotoshop.html">
+    <a class="app" href="photography.html">
         <img src="assets/photoshop.png">
     </a>
-    <a class="app" href="slack.html">
+    <a class="app" href="https://www.linkedin.com/in/yiqiao-miffy-wang/">
         <img src="assets/slack.png">
     </a>
-    <a class="app" href="notion.html">
+    <a class="app notion-toggle" href="#">
         <img src="assets/notion.png">
     </a>
-    <a class="app" href="r.html">
+    <a class="app" href="https://github.com/miffy-wang">
         <img src="assets/r.png">
     </a>
-    <a class="app" href="vscode.html">
+    <a class="app" href="https://github.com/miffy-wang">
         <img src="assets/vscode.png">
     </a>
-    <a class="app" href="music.html">
-        <img src="assets/music.png">
+    <a class="app music-toggle" href="#">
+        <img src="assets/music.png" alt="Music">
     </a>
+
+<script src="index.js"></script>
 </footer>
